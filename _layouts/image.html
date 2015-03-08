@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    <style>
+    #image {
+      background-image: url("{{ site.url }}/img/{{ page.image }}.jpg");
+    }
+    </style>
+  </head>
+  <body>
+    <div id="image"></div>
+    <div id="bottom-bar">
+      <div id="information">
+        <span id="title">{{ page.title }}</span><br/>
+        {% if page.subtitle %}
+        <span id="subtitle">{{ page.subtitle }}</span><br/>
+        {% endif %}
+        <span id="medium">{{ page.medium }}</span>&nbsp;&mdash;&nbsp;<span id="dimensions">{{ page.dimensions }}</span>
+      </div>
+      <div id="navigation">
+        {% for post in site.posts %}
+          {% if page.id == post.id %}
+          <div id="current-thumbnail" class="thumbnail" style='background-image: url("{{ site.url }}/thumb/{{ post.image }}.jpg")'></div>
+          {% assign scrolloffset = forloop.index0 %}
+          {% else %}
+          <a class="thumbnail" href="{{ site.url }}{{ post.url }}" style='background-image: url("{{ site.url }}/thumb/{{ post.image }}.jpg")'>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <center><a id="about-link" href="{{ site.url }}/about">About the artist</a></center>
+    <script>
+    var nav = document.getElementById("navigation");
+    nav.scrollLeft = {{ scrolloffset }} * 104 - (nav.offsetWidth / 2 - 50);
+    </script>
+  </body>
+</html>

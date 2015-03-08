@@ -1,0 +1,20 @@
+# Site settings
+title: Nick Musaelian
+email: nick@nickmusaelian.com
+#url: "http://www.nickmusaelian.com"
+url: "http://192.168.1.26:4000"
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title
+
+starting_painting: forget-the-monkeys
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: image
