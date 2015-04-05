@@ -9,7 +9,9 @@
     </style>
   </head>
   <body>
-    <div id="image"></div>
+    <div id="image-container">
+      <div id="image" style="max-height: {% if page.maxheight %}{{ page.maxheight }}{% else %}{{ site.maxheight }}{% endif %};"></div>
+    </div>
     <div id="bottom-bar">
       <div id="information">
         <span id="title">{{ page.title }}</span><br/>
