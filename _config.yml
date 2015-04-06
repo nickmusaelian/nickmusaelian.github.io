@@ -1,9 +1,9 @@
 # Site settings
 title: Nick Musaelian
 email: nick@nickmusaelian.com
-#url: "http://www.nickmusaelian.com"
+url: "http://www.nickmusaelian.com"
 #url: "http://nickmusaelian.github.io"
-url: http://localhost:4000
+#url: http://localhost:4000
 
 # Build settings
 markdown: kramdown
